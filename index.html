@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gruha Pravesam Invitation</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      font-family: Arial, sans-serif;
+    }
+
+    .invitation-container {
+      position: relative;
+      max-width: 800px;
+      width: 90%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .invitation-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .map-button {
+      position: absolute;
+      bottom: 13.5%; /* Align below "at" */
+      left: 30.5%;
+      transform: translateX(-50%);
+      background: transparent;
+      color: #780029;
+      border: none;
+      padding: 6px 20px;
+      line-height: 1;
+      border-radius: 15px;
+      font-family: 'EB Garamond', serif;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: none;
+      transition: all 0.3s ease;
+      z-index: 10;
+      min-width: 120px;
+    }
+
+    .map-button:hover {
+      transform: translateX(-50%) translateY(-2px);
+      background: rgba(139, 69, 19, 0.1);
+    }
+
+    .map-button:active {
+      transform: translateX(-50%) translateY(-1px);
+    }
+
+    @media (max-width: 600px) {
+      .invitation-container {
+        width: 95%;
+        margin: 20px auto;
+      }
+
+      .map-button {
+
+        font-size: 13px;
+        min-width: 100px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .map-button {
+        font-size: 12px;
+        min-width: 80px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="invitation-container">
+    <img src="static/image.png" alt="Gruha Pravesam Invitation" class="invitation-image" />
+    <button class="map-button" onclick="openMap()">
+      Click for Location<br>
+      Sai Pavan Heights, Flat<br>
+      No:401, Vasavi Green Park,<br>
+      Bowrampet Village, Hyd
+    </button>
+    
+  </div>
+
+  <script>
+    function openMap() {
+      window.open('https://maps.app.goo.gl/YmWNKpXVp2Jkm9kU6', '_blank');
+    }
+
+    // Subtle animation on load
+    window.addEventListener('load', function () {
+      const container = document.querySelector('.invitation-container');
+      container.style.opacity = '0';
+      container.style.transform = 'scale(0.95)';
+      container.style.transition = 'all 0.6s ease';
+
+      setTimeout(() => {
+        container.style.opacity = '1';
+        container.style.transform = 'scale(1)';
+      }, 100);
+    });
+  </script>
+</body>
+
+</html>
